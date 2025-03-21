@@ -15,8 +15,11 @@ public class LaunchProjectile : MonoBehaviour
     [Tooltip("The speed at which the projectile is launched")]
     public float launchSpeed = 1.0f;
 
+    //public AudioSource audioSource;
+
     public void Fire()
     {
+        //audioSource.Play();
         GameObject newObject = Instantiate(projectilePrefab, startPoint.position, startPoint.rotation);
 
         if (newObject.TryGetComponent(out Rigidbody rigidBody))
