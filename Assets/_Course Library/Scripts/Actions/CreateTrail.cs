@@ -12,6 +12,7 @@ public class CreateTrail : MonoBehaviour
     private Color color = Color.white;
 
     private GameObject currentTrail = null;
+ 
 
     public void StartTrail()
     {
