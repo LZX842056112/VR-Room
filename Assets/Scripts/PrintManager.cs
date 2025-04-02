@@ -7,19 +7,19 @@ public class PrintManager : MonoBehaviour
     // 桌子上放置迷你版 3D 物体的位置（建议在桌面上放置一个空物体作为标记）
     public Transform tableLocation;
     // 缩小版整体的缩放比例（例如 0.1f 表示 10% 尺寸）
-    public float miniatureScale = 1.0f;
-
-
-    private void Start()
-    {
-       
-    }
+    public float miniatureScale = 0.5f;
 
     /// <summary>
     /// 打印函数：遍历 creationParent 下所有 TrailRenderer，Bake 网格，并生成迷你版复制体放在桌子上
     /// </summary>
     public void PrintCreation()
     {
+        GameObject myObject= GameObject.Find("PrintedCreation");
+        if(myObject != null)
+        {
+            Destroy(myObject);
+        }
+
         // 创建一个父对象作为打印结果，并放置在桌子指定位置
         GameObject printedCreation = new GameObject("PrintedCreation");
         printedCreation.transform.position = tableLocation.position;
@@ -50,5 +50,13 @@ public class PrintManager : MonoBehaviour
             // 使用 trail 的材质（如果需要，可以修改为其他材质）
             mr.material = trail.sharedMaterial;
         }
+        GameObject obj = GameObject.FindGameObjectWithTag("obj");
+        GameObject obj2 = Instantiate(obj);
+        obj2.tag = "Trail";
+        obj2.transform.parent = printedCreation.transform;
+        obj2.transform.localPosition = new Vector3(0,1.5f,0.5f);
+        obj2.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        obj2.transform.localScale = Vector3.one * 0.5f;
+
     }
 }
