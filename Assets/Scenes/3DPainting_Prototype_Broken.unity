@@ -9584,6 +9584,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trailPrefab: {fileID: 7631491353434788432, guid: 594d006ac61ca0d4db9a3c2f2cba7eb8,
     type: 3}
+  paintableLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  checkRadius: 0.1
 --- !u!82 &7785142639058902458
 AudioSource:
   m_ObjectHideFlags: 0

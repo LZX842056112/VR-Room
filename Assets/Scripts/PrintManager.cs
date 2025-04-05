@@ -54,7 +54,7 @@ public class PrintManager : MonoBehaviour
         GameObject obj2 = Instantiate(obj);
         obj2.tag = "Trail";
         obj2.transform.parent = printedCreation.transform;
-        obj2.transform.localPosition = new Vector3(0,1.5f,0.5f);
+        obj2.transform.localPosition = new Vector3(0,1.5f,0.55f);
         obj2.transform.localRotation = Quaternion.Euler(0, 0, 0);
         obj2.transform.localScale = Vector3.one * 0.5f;
 
