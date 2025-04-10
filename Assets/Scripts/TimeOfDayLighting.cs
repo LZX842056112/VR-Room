@@ -1,41 +1,54 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class TimeOfDayLighting : MonoBehaviour
 {
-    public Light directionalLight; // 引用场景中的Directional Light
-    public Gradient sunriseGradient; // 用于日出和日落的颜色渐变
-    public float dayStartTime = 6.0f; // 日出时间（小时）
-    public float dayEndTime = 18.0f; // 日落时间（小时）
-    public float transitionTime = 2.0f; // 颜色变化的过渡时间（小时）
+    public Light directionalLight;             // 引用场景中的 Directional Light
+    public Gradient sunriseGradient;           // 用于日出/日落渐变的颜色
+    public float dayStartTime = 360f;          // 日出时间（分钟），例如：6:00 AM = 6 * 60 = 360
+    public float dayEndTime = 1140f;           // 日落时间（分钟），例如：19:00 = 19 * 60 = 1140
+    public float transitionTime = 1f;        // 颜色渐变过渡时间（分钟）
 
-    void Start()
+    void Update()
     {
         if (directionalLight == null)
         {
             directionalLight = GetComponent<Light>();
         }
+        UpdateRealTimer();
     }
 
-    void Update()
+    private void UpdateRealTimer()
     {
-        float currentTime = (Time.time / 3600) % 24; // 获取当前时间的小时数（0-23）
-        float t = Mathf.Clamp01((currentTime - dayStartTime) / transitionTime); // 计算日出过渡的参数
-        float sunsetColor = Mathf.Clamp01((dayEndTime - currentTime) / transitionTime); // 计算日落过渡的参数
+        DateTime now = DateTime.Now;
+        // 计算自午夜以来的分钟数
+        float currentTimeMinutes = now.Hour * 60f + now.Minute;
+        print("111   " + currentTimeMinutes);
 
-        // 根据当前时间调整光的颜色
-        if (currentTime >= dayStartTime && currentTime <= dayEndTime)
+        // 根据当前时间计算日出和日落的过渡参数 [0, 1]
+        float tSunrise = Mathf.Clamp01((currentTimeMinutes - dayStartTime) / transitionTime);
+        float tSunset = Mathf.Clamp01((dayEndTime - currentTimeMinutes) / transitionTime);
+
+        // 调整光照颜色
+        if (currentTimeMinutes >= dayStartTime && currentTimeMinutes <= dayEndTime)
         {
-            directionalLight.color = sunriseGradient.Evaluate(t); // 使用渐变颜色
+            // 日间，使用 sunriseGradient 对应 tSunrise 参数来计算颜色
+            directionalLight.color = sunriseGradient.Evaluate(tSunrise);
         }
-        else if (currentTime > dayEndTime) // 夜间颜色可以根据需要设置，这里简单使用黑色
+        else if (currentTimeMinutes > dayEndTime)
         {
+            // 夜间过渡，若需要可以设置为其它颜色
             directionalLight.color = Color.black;
         }
-        else if (currentTime < dayStartTime) // 使用日落颜色，这里简单使用日落渐变的反向颜色
+        else // (currentTimeMinutes < dayStartTime)
         {
-            directionalLight.color = sunriseGradient.Evaluate(1 - sunsetColor); // 使用日落渐变颜色的反向效果
+            // 清晨前的过渡，可以使用 sunset 的渐变色的反向效果
+            directionalLight.color = sunriseGradient.Evaluate(1 - tSunset);
         }
+
+        // 根据当天时间更新光源的方向（假设光源绕 X 轴旋转）
+        // 全天 1440 分钟对应 360°，计算当前角度
+        float angle = (currentTimeMinutes / 1440f) * 360f;
+        directionalLight.transform.eulerAngles = new Vector3(angle, 0, 0);
     }
 }

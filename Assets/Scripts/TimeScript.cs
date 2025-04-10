@@ -30,5 +30,6 @@ public class TimeScript : MonoBehaviour
         secondHand.transform.localRotation = Quaternion.Euler(new Vector3(secondsDegree * currentTime.Second + 84, 0, -90));
         minuteHand.transform.localRotation = Quaternion.Euler(new Vector3(minutesDegree * currentTime.Minute + 84, 0, -90));
         hourHand.transform.localRotation = Quaternion.Euler(new Vector3(hoursDegree * currentTime.Hour + 84, 0, -90));
+
     }
 }
