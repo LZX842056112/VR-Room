@@ -23,7 +23,6 @@ public class TimeOfDayLighting : MonoBehaviour
         DateTime now = DateTime.Now;
         // 计算自午夜以来的分钟数
         float currentTimeMinutes = now.Hour * 60f + now.Minute;
-        print("111   " + currentTimeMinutes);
 
         // 根据当前时间计算日出和日落的过渡参数 [0, 1]
         float tSunrise = Mathf.Clamp01((currentTimeMinutes - dayStartTime) / transitionTime);
@@ -48,7 +47,8 @@ public class TimeOfDayLighting : MonoBehaviour
 
         // 根据当天时间更新光源的方向（假设光源绕 X 轴旋转）
         // 全天 1440 分钟对应 360°，计算当前角度
-        float angle = (currentTimeMinutes / 1440f) * 360f;
+        float angle = (currentTimeMinutes / 1440f) * 270f;
+        print("1111  "+angle);
         directionalLight.transform.eulerAngles = new Vector3(angle, 0, 0);
     }
 }
