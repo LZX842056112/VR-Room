@@ -6195,7 +6195,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 7111071080452410799, guid: a2e8ee2005c074447b929af42b7f5068,
+  m_ModelPrefab: {fileID: 8557704231179289222, guid: 94722d2f12fff44dc9f81e18afb2f945,
     type: 3}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
@@ -10424,7 +10424,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 8848131633249631744, guid: eb91affb984e740dbb2082626ba96efb,
+  m_ModelPrefab: {fileID: 8557704231179289222, guid: 94722d2f12fff44dc9f81e18afb2f945,
     type: 3}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
@@ -12584,12 +12584,12 @@ MonoBehaviour:
       m_Name: Main Camera - TPD - Position
       m_Type: 0
       m_ExpectedControlType: Vector3
-      m_Id: 
+      m_Id: 5f5693ca-af2e-4f5c-a641-057e42e5c7f5
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings:
       - m_Name: 
-        m_Id: 
+        m_Id: a3a5db43-65e4-4359-bdea-d1f7aec09c0d
         m_Path: <XRHMD>/centerEyePosition
         m_Interactions: 
         m_Processors: 
@@ -12604,12 +12604,12 @@ MonoBehaviour:
       m_Name: Main Camera - TPD - Rotation
       m_Type: 0
       m_ExpectedControlType: Quaternion
-      m_Id: 
+      m_Id: 80fbbe55-4b2b-49c2-86c3-04ac2ff974ee
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings:
       - m_Name: 
-        m_Id: 
+        m_Id: 2a8374f0-2462-4c40-ab48-28f3130f3f33
         m_Path: <XRHMD>/centerEyeRotation
         m_Interactions: 
         m_Processors: 
@@ -12621,7 +12621,7 @@ MonoBehaviour:
   m_TrackingStateInput:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Tracking State Input
       m_Type: 0
       m_ExpectedControlType: 
       m_Id: 778e9a25-4b3c-4ea2-9320-51f66f543730
@@ -16290,7 +16290,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24589,7 +24589,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2093529276241526591}
         m_TargetAssemblyTypeName: ChangeMaterial, Assembly-CSharp
-        m_MethodName: SetOtherMaterial
+        m_MethodName: SetOriginalMaterial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24628,7 +24628,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2093529276241526591}
         m_TargetAssemblyTypeName: ChangeMaterial, Assembly-CSharp
-        m_MethodName: SetOriginalMaterial
+        m_MethodName: SetOtherMaterial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -27731,6 +27731,7 @@ GameObject:
   - component: {fileID: 7863669396577847637}
   - component: {fileID: 3016069959630375334}
   - component: {fileID: 839586645}
+  - component: {fileID: 7863669396577847638}
   m_Layer: 0
   m_Name: Move Up Button
   m_TagString: Untagged
@@ -27754,6 +27755,27 @@ Transform:
   - {fileID: 7863669397814863511}
   m_Father: {fileID: 682637717}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -73.127}
+--- !u!65 &7863669396577847638
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7863669396577847636}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.100000024, y: 0.05318781, z: 0.1}
+  m_Center: {x: 2.318092e-16, y: 0.047053058, z: 0}
 --- !u!33 &7863669396962942826
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -27977,6 +27999,7 @@ GameObject:
   - component: {fileID: 7863669397134400381}
   - component: {fileID: 3016069960143379342}
   - component: {fileID: 1824525328}
+  - component: {fileID: 7863669397134400382}
   m_Layer: 0
   m_Name: Reset Button
   m_TagString: Untagged
@@ -28000,6 +28023,27 @@ Transform:
   - {fileID: 7863669398332060863}
   m_Father: {fileID: 1131438064}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7863669397134400382
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7863669397134400380}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.2, y: 0.10284826, z: 0.2}
+  m_Center: {x: 0, y: 0.048575863, z: 0}
 --- !u!33 &7863669397814863506
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -28117,6 +28161,7 @@ GameObject:
   - component: {fileID: 7863669397899538605}
   - component: {fileID: 3016069961546575966}
   - component: {fileID: 1086352045}
+  - component: {fileID: 7863669397899538606}
   m_Layer: 0
   m_Name: Move Down Button
   m_TagString: Untagged
@@ -28140,6 +28185,27 @@ Transform:
   - {fileID: 7863669396962942831}
   m_Father: {fileID: 682637717}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -73.127}
+--- !u!65 &7863669397899538606
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7863669397899538604}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.100000024, y: 0.05593029, z: 0.1}
+  m_Center: {x: -2.318092e-16, y: 0.046264067, z: 0}
 --- !u!1 &7863669398301968894
 GameObject:
   m_ObjectHideFlags: 0
@@ -28151,6 +28217,7 @@ GameObject:
   - component: {fileID: 7863669398301968895}
   - component: {fileID: 3016069961412692236}
   - component: {fileID: 131723510}
+  - component: {fileID: 7863669398301968896}
   m_Layer: 0
   m_Name: Spawn Button
   m_TagString: Untagged
@@ -28174,6 +28241,27 @@ Transform:
   - {fileID: 7863669397097375293}
   m_Father: {fileID: 1865789075}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7863669398301968896
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7863669398301968894}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.2, y: 0.101584435, z: 0.20163631}
+  m_Center: {x: 0.0000000010240926, y: 0.050259113, z: -0.00081816304}
 --- !u!33 &7863669398332060858
 MeshFilter:
   m_ObjectHideFlags: 0
