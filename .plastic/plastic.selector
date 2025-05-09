@@ -1,0 +1,4 @@
+repository "VR Room@tj_wechat_os_qy0xd8la_yh9dhex8x6ssrooe@cloud.cn"
+  path "/"
+    br "/main"
+    co "/main"
